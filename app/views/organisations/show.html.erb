@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organisation.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @organisation.phone %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @organisation.city %>
+</p>
+
+<p>
+  <strong>Employees:</strong><br>
+  <% @organisation.employees.each do |emp| %>
+    <strong><%= emp.id %></strong>
+    <strong><%= emp.name %></strong>
+    <strong><%= emp.email %></strong><br>
+   <% end %> 
+</p>
+
+
+
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<%= link_to 'Back', organisations_path %>
